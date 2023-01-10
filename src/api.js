@@ -6,8 +6,12 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-
 async function send(events) {
+
+  if (!events){ //prevent bug
+    return
+  }
+
   let response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: events.message.text,
@@ -16,7 +20,7 @@ async function send(events) {
   });
 
   let message = response["data"]["choices"][0]["text"].trim()
-
+  
   if (events.type === "message") {
     const dataString = JSON.stringify({
       replyToken: events.replyToken,
@@ -31,8 +35,7 @@ async function send(events) {
 
     const headers = {
       "Content-Type": "application/json",
-      "Authorization": "Bearer " + process.env.token,
-      "ngrok-skip-browser-warning": ""
+      "Authorization": "Bearer " + process.env.token
     }
 
     const webhookOptions = {
