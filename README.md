@@ -28,7 +28,7 @@ npm start
 
 ## Example
 
-![example](./img/example.jpg)
+<img src="https://github.com/sudlit/ChatGPT-For-Line-Bot/raw/main/img/example.jpg" width="300" height="400">
 
 ## P.S.
 
