@@ -12,7 +12,7 @@ This is using Line bot Messaging API with ChatGPT API. So we make webhook to rec
 
 ## How to use
 
-- set environment value for ChatGPT API Key (apiKey), Line Channel Access Token (token), port in `.env` file 
+- config environment value for ChatGPT API Key (apiKey), Line Channel Access Token (token), port in `.env` file 
 
 - use this command to install necessary package.
 ```
@@ -23,7 +23,7 @@ npm install
 ```
 npm start
 ```
-- set webhook url at Line Developer Website 
+- config webhook url at Line Developer Website 
 - enjoy !!
 
 ## Example
